@@ -37,3 +37,4 @@ END IF
 - In the types folder, a file next-auth.d.ts created to modify some data types in next-auth.
 - In the src directory, we will have the middleware.ts file.
 
+*[Shadcn Documentation](https://ui.shadcn.com/docs)*
