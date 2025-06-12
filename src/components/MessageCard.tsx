@@ -25,14 +25,13 @@ import { Message } from "@/models/User";
 import { toast, Toaster } from "sonner";
 import axios from "axios";
 import { ApiResponse } from "@/types/ApiResponse";
-import { title } from "process";
 
 type MessageCardProps = {
     message: Message;
     onMessageDelete: (messageId: string) => void
 }
 
-const MessageCard = ({message, onMessageDelete}: MessageCardProps) => {
+export const MessageCard = ({message, onMessageDelete}: MessageCardProps) => {
   const handleDeleteConfirm = async() => {
     const response = await axios.delete<ApiResponse>(`/api/delete-message/${message._id}`)
     toast.success(response.data.message)
@@ -67,5 +66,3 @@ const MessageCard = ({message, onMessageDelete}: MessageCardProps) => {
     </Card>
   );
 };
-
-export default MessageCard;
